@@ -4,6 +4,7 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Login from './components/auth/Login'
 import Register from './components/auth/Register'
+import Car from './components/car/car';
 
 function App() {
   const { currentUser } = useSelector((state) => state.user)
@@ -13,8 +14,9 @@ function App() {
       <div className="App">
         <div className="navRoute">
           <Routes>
+            <Route path="/" element={ <Car />} />
             <Route path="/login" element={currentUser ? <Navigate to="/" /> : <Login />} />
-            <Route path="/register" element={currentUser ? <Navigate to="/login" /> : <Register />} />
+            <Route path="/register" element={  <Register />} />
           </Routes>
         </div>
       </div>

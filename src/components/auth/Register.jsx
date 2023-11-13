@@ -5,18 +5,21 @@ import { Link } from 'react-router-dom';
 import { createUser } from '../../redux/apiCalls';
 
 const Register = () => {
-  const [name, setName] = useState('')
-  const dispatch = useDispatch()
+  const [name, setName] = useState('');
+  const [full_name, setFullName] = useState('');
+  const dispatch = useDispatch();
 
   const registerUser = (e) => {
-    e.preventDefault()
-    createUser(dispatch, { name })
-  }
+    e.preventDefault();
+    createUser(dispatch, { name, full_name });
+  };
+
   return (
     <div className="LoginDiv">
       <form className="LoginForm">
         <h2>Create a new account</h2>
-        <input onChange={(e) => setName(e.target.value)} type="text" name="" id="" placeholder="Enter your name" />
+        <input onChange={(e) => setName(e.target.value)} type="text" placeholder="Enter your name" />
+        <input onChange={(e) => setFullName(e.target.value)} type="text" placeholder="Enter your full name" />
         <button onClick={registerUser} type="submit">Signup</button>
         <p>
           Have an account?
@@ -28,4 +31,5 @@ const Register = () => {
     </div>
   );
 };
+
 export default Register;
