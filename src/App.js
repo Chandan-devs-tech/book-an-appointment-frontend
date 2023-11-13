@@ -1,28 +1,27 @@
-import logo from './logo.svg';
+/* eslint-disable */
 import './App.css';
+import { Route, Routes, Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import Login from './components/auth/Login'
+import Register from './components/auth/Register'
+import Car from './components/car/car';
 
 function App() {
+  const { currentUser } = useSelector((state) => state.user)
+  console.log(currentUser)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          {' '}
-          <code>src/App.js</code>
-          {' '}
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="AppDiv">
+      <div className="App">
+        <div className="navRoute">
+          <Routes>
+            <Route path="/" element={ <Car />} />
+            <Route path="/login" element={currentUser ? <Navigate to="/" /> : <Login />} />
+            <Route path="/register" element={  <Register />} />
+          </Routes>
+        </div>
+      </div>
     </div>
+
   );
 }
 
