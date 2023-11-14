@@ -1,0 +1,26 @@
+.d-flex.flex-column.flex-shrink-0.p-3.bg-light {
+    height: 100vh;
+}
+
+li.nav-item {
+    margin-top: 16px;
+}
+
+li.nav-item a.nav-link {
+   color: rgb(45, 45, 45);
+   font-weight:600;
+}
+
+img.bi.me-2 {
+    margin-left: 10px;
+}
+
+li.nav-item:hover a.nav-link {
+    background-color: #30C48D; 
+    border-radius: 5px;
+    color: white;
+}
+
+li.nav-item.logout {
+    margin-top: 60%;
+}
