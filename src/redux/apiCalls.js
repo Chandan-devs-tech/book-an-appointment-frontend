@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { publicRequest } from "../request";
 import { loginFailure, loginStart, loginSuccess } from "./user/user"
+import { addFailure, addStart, addSuccess } from './cars/addVehicle';
 
 export const login = async (dispatch, user) => {
   dispatch(loginStart());
@@ -28,3 +29,15 @@ export const createUser = async (dispatch, user) => {
     dispatch(loginFailure())
   }
 }
+
+export const addVehicle = async (dispatch, details) => {
+  dispatch(addStart());
+  try {
+    const res = await publicRequest.post('/cars', details);
+    const responseData = res.data;
+    delete responseData.headers;
+    dispatch(addSuccess(responseData));
+  } catch (err) {
+    dispatch(addFailure());
+  }
+};
