@@ -1,0 +1,56 @@
+.d-flex.flex-column.flex-shrink-0.p-3.bg-light {
+  height: 100vh;
+}
+
+li.nav-item {
+  margin-top: 16px;
+}
+
+li.nav-item a.nav-link {
+  color: rgb(45, 45, 45);
+  font-weight: 600;
+}
+
+img.bi.me-2 {
+  margin-left: 10px;
+}
+
+li.nav-item:hover a.nav-link {
+  background-color: #30c48d;
+  border-radius: 5px;
+  color: white;
+}
+
+li.nav-item.logout {
+  margin-top: 60%;
+}
+
+img.bi-logo-white {
+  height: 44px;
+  mix-blend-mode: color-dodge;
+  margin-left: 5px;
+}
+
+button.navbar-toggler {
+  margin-right: 14px;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  li.nav-item a.nav-link {
+    color: rgb(207, 206, 206);
+    font-weight: 600;
+    padding-left: 15px;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .side-menu {
+    display: none;
+  }
+}
