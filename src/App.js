@@ -7,6 +7,7 @@ import Login from './components/auth/Login'
 import Register from './components/auth/Register'
 import Car from './components/car/car';
 import SidebarComponents from './components/sideBar/sideBarComponent';
+import ResponsiveNav from './components/sideBar/responsive';
 
 function App() {
   const { currentUser } = useSelector((state) => state.user)
