@@ -1,9 +1,21 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import React, { useState } from 'react';
 import Logo from '../../assets/drive-easy-logo.png';
 import ResponsiveNav from './responsive';
+import AddCar from '../car/AddCar';
 
-const SidebarComponents = () => (
-  <div className="nav-side-menu">
+
+const SidebarComponents = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+  return (
+    <div className="nav-side-menu">
     <div className="side-menu">
       <div className="d-flex flex-column flex-shrink-0 p-3 bg-light" style={{ width: '280px' }}>
         <a href="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
@@ -27,9 +39,9 @@ const SidebarComponents = () => (
             </a>
           </li>
           <li className="nav-item">
-            <a href="#" className="nav-link ">
-              Add Car
-            </a>
+          <button className="nav-link" onClick={openModal}>
+            Add Car
+          </button>
           </li>
           <li className="nav-item">
             <a href="#" className="nav-link ">
@@ -45,7 +57,9 @@ const SidebarComponents = () => (
       </div>
     </div>
     <ResponsiveNav />
+    <AddCar isOpen={isModalOpen} onClose={closeModal} />
   </div>
-);
+  )
+  };
 
 export default SidebarComponents;
