@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { createUser } from '../../redux/apiCalls';
+import styles from "./Register.module.css"
 
 const Register = () => {
   const [name, setName] = useState('');
@@ -15,15 +16,15 @@ const Register = () => {
   };
 
   return (
-    <div className="LoginDiv">
-      <form className="LoginForm">
+    <div className=  {styles.LoginDiv}>
+      <form className={styles.LoginForm}>
         <h2>Create a new account</h2>
         <input onChange={(e) => setName(e.target.value)} type="text" placeholder="Enter your name" />
         <input onChange={(e) => setFullName(e.target.value)} type="text" placeholder="Enter your full name" />
         <button onClick={registerUser} type="submit">Signup</button>
         <p>
           Have an account?
-          <Link to="/login" className="Loginlink">
+          <Link to="/login" className={styles.LoginLink}>
             &nbsp; Login...
           </Link>
         </p>

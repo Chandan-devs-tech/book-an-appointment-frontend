@@ -8,10 +8,9 @@ import { addVehicle } from '../../redux/apiCalls';
 const AddVehicles = () => {
   const [name, setname] = useState('');
   const [model, setmodel] = useState('');
-  const [image, setimage] = useState('');
+  const [img, setimg] = useState('');
   const [description, setdescription] = useState('');
   const [finance_fee, setfinance_fee] = useState('');
-  const [down_payment, setdown_payment] = useState('');
   const [total_amount, settotal_amount] = useState('');
   const [duration, setduration] = useState('');
   const dispatch = useDispatch();
@@ -20,26 +19,32 @@ const AddVehicles = () => {
   const addNewVehicle = (e) => {
     e.preventDefault();
 
+    // Ensure the field names match the Rails backend
     addVehicle(dispatch, {
-      name, model, image, description, finance_fee, down_payment, total_amount, duration,
+      name,
+      model,
+      img,
+      description,
+      finance_fee,
+      total_amount,
+      duration,
     });
     navigate('/');
   };
 
   return (
     <div className="LoginDiv">
-      <form className="LoginForm">
-        <input onChange={(e) => setname(e.target.value)} type="text" placeholder="vehicle name" />
-        <input onChange={(e) => setmodel(e.target.value)} type="text" placeholder="vehicle model" />
-        <input onChange={(e) => setimage(e.target.value)} type="text" placeholder="vehicle image" />
-        <input onChange={(e) => setdescription(e.target.value)} type="text" placeholder="vehicle description" />
-        <input onChange={(e) => setfinance_fee(e.target.value)} type="number" placeholder="finance_fee" />
-        <input onChange={(e) => setdown_payment(e.target.value)} type="number" placeholder="down_payment" />
-        <input onChange={(e) => settotal_amount(e.target.value)} type="number" placeholder="total_amount" />
-        <input onChange={(e) => setduration(e.target.value)} type="text" placeholder="duration" />
+      <form className="LoginForm" onSubmit={addNewVehicle}>
+        <input onChange={(e) => setname(e.target.value)} placeholder="vehicle name" />
+        <input onChange={(e) => setmodel(e.target.value)} placeholder="vehicle model" />
+        <input onChange={(e) => setimg(e.target.value)} placeholder="vehicle image" />
+        <input onChange={(e) => setdescription(e.target.value)} placeholder="vehicle description" />
+        <input onChange={(e) => setfinance_fee(e.target.value)} placeholder="finance_fee" />
+        <input onChange={(e) => settotal_amount(e.target.value)} placeholder="total_amount" />
+        <input onChange={(e) => setduration(e.target.value)} placeholder="duration" />
 
         <textarea maxLength={30} rows="5" onChange={(e) => setdescription(e.target.value)} type="text" placeholder="description" />
-        <button type="submit" onClick={addNewVehicle}>Add</button>
+        <button type="submit">Add</button>
       </form>
     </div>
   );
