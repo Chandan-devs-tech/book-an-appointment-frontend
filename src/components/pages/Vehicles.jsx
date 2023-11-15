@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { getVehicles } from '../../redux/cars/vehicles';
+import './Vehicle.css'
 
 const Vehicles = () => {
   const dispatch = useDispatch();
