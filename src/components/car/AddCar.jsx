@@ -13,8 +13,8 @@ const AddCar = ({ isOpen, onClose }) => {
   });
 
   const handleChange = (e) => {
-    const { name, value} = e.target;
-    setFormData({ ...formData, [name]: value});
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = (e) => {
@@ -24,7 +24,10 @@ const AddCar = ({ isOpen, onClose }) => {
   };
 
   return (
-    <Modal isOpen={isOpen} onRequestClose={onClose}>
+    <Modal
+    isOpen={isOpen}
+    onRequestClose={onClose}
+    >
       <div className="container">
         <h2>Add New Car</h2>
         <form onSubmit={handleSubmit}>
