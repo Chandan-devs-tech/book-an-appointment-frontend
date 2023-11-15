@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { BiLogIn, BiLogOut } from 'react-icons/bi';
-import "./Splash.css"
+import "./splash.css"
 
 const Splash = () => (
   <div className="splashDiv">
