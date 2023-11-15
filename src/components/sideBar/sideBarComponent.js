@@ -38,9 +38,9 @@ const SidebarComponents = () => {
               </a>
             </li>
             <li className="nav-item">
-              <button type="submit" className="nav-link" onClick={openModal}>
+              <a href="#" className="nav-link" onClick={openModal}>
                 Add Car
-              </button>
+              </a>
             </li>
             <li className="nav-item">
               <a href="#" className="nav-link ">
