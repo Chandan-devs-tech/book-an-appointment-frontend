@@ -9,16 +9,19 @@ import Splash from './components/auth/Splash'
 import Vehicles from './components/pages/Vehicles';
 import SidebarComponents from './components/sideBar/sideBarComponent';
 import ResponsiveNav from './components/sideBar/responsive';
-import './App.css'
+import './App.css';
+import RootPath from './RootPath';
 
 function App() {
   const { currentUser } = useSelector((state) => state.user)
  
   return (
     <div className="AppDiv">
-       {currentUser && <div className="navApp">
-       <SidebarComponents />
-       </div>}
+      <RootPath />
+     {/* <div className="navApp">
+       {currentUser && 
+       <SidebarComponents />}
+      </div>
         <div className="navRoute">
           <Routes>
             <Route path="/" element={ <SidebarComponents />} />
@@ -26,7 +29,7 @@ function App() {
             <Route path="/login" element={currentUser ? <Navigate to="/" /> : <Login />} />
             <Route path="/register" element={currentUser ? <Navigate to="/login" /> :   <Register />} />
           </Routes>
-        </div>
+        </div> */}
       </div>
 
   );

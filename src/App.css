@@ -1,5 +1,10 @@
-.AppDiv {
+
+.container {
     display: flex;
     justify-content: space-between;
-
 }
+
+/* .root_container {
+    display: flex;
+    justify-content: space-between;
+} */
