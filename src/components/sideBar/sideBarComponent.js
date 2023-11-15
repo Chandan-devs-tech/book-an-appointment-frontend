@@ -44,7 +44,7 @@ const SidebarComponents = () => {
               </a>
             </li>
             <li className="nav-item logout">
-              <a href="/login" className="nav-link " onClick={logouts}>
+              <a href="/" className="nav-link " onClick={logouts}>
                 Log out
               </a>
             </li>
