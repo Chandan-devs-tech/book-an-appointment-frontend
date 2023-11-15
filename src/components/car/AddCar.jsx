@@ -28,17 +28,6 @@ const AddCar = ({ isOpen, onClose }) => {
     <Modal
     isOpen={isOpen}
     onRequestClose={onClose}
-    style={{
-      content: {
-        width:'50%',
-        height: '70%',
-        left: '30%',
-        top: '9%',
-        border: 'none',
-        borderRadius: '3%',
-        boxShadow: '0px 1px 7px rgb(119, 236, 193)',
-      },
-    }}
     >
       <div className="form-container">
         <h2>Add New Car</h2>

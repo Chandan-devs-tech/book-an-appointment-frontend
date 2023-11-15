@@ -3,6 +3,20 @@
   text-align: center;
 }
 
+div.ReactModal__Content.ReactModal__Content--after-open {
+  width: 50% !important;
+  height: 70% !important;
+  left: 30% !important;
+  top: 9% !important;
+  border: none !important;
+  border-radius: 3% !important;
+  box-shadow: 0 1px 7px rgb(119, 236, 193) !important;
+}
+
+div.ReactModal__Overlay.ReactModal__Overlay--after-open {
+  background-color: rgba(136, 134, 134, 0.5) !important;
+}
+
 .form-container h2 {
   color: #30c58e;
   font-size: 40px;
@@ -53,14 +67,37 @@
 }
 
 @media screen and (max-width: 480px) {
+  .form-container {
+    padding: 1px;
+  }
+
   .form-container h2 {
-    color: rgb(207, 206, 206);
-    font-size: 20px;
+    color: #30c58e;
+    font-size: 23px;
   }
 
   .form-input {
-    margin: 20px;
-    height: 5vh;
-    padding: 6px;
+    margin: 10px;
+    height: 6vh;
+    padding: 5px;
+    width: 100%;
+  }
+
+  .carBtn {
+    background-color: #30c58e;
+    padding: 9px;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 15px;
+  }
+
+  div.ReactModal__Content.ReactModal__Content--after-open {
+    width: 85% !important;
+    height: 50% !important;
+    left: 8% !important;
+    top: 20% !important;
   }
 }
