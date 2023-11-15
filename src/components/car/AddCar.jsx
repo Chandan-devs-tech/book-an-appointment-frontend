@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React, { useState } from 'react';
 import Modal from 'react-modal';
+import '../../styles/AddCar.css';
 
 const AddCar = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -27,35 +28,34 @@ const AddCar = ({ isOpen, onClose }) => {
     <Modal
     isOpen={isOpen}
     onRequestClose={onClose}
+    style={{
+      content: {
+        width:'50%',
+        height: '70%',
+        left: '30%',
+        top: '9%',
+        border: 'none',
+        borderRadius: '3%',
+        boxShadow: '0px 1px 7px rgb(119, 236, 193)',
+      },
+    }}
     >
-      <div className="container">
+      <div className="form-container">
         <h2>Add New Car</h2>
         <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <label htmlFor="name" className="form-label">Name</label>
-          <input type="text" className="form-control" id="name" name="name" value={formData.name} onChange={handleChange} />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="model" className="form-label">Model</label>
-          <input type="text" className="form-control" id="model" name="model" value={formData.model} onChange={handleChange} />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="image" className="form-label">Image URL</label>
-          <input type="text" className="form-control" id="image" name="image" value={formData.image} onChange={handleChange} />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="financeFee" className="form-label">Finance Fee</label>
-          <input type="text" className="form-control" id="financeFee" name="financeFee" value={formData.financeFee} onChange={handleChange} />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="totalAmount" className="form-label">Total Amount</label>
-          <input type="text" className="form-control" id="totalAmount" name="totalAmount" value={formData.totalAmount} onChange={handleChange} />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="duration" className="form-label">Duration</label>
-          <input type="text" className="form-control" id="duration" name="duration" value={formData.duration} onChange={handleChange} />
-        </div>
-          <button type="submit" className="btn btn-primary">Add Car</button>
+          <div className='cont'>
+          <div className="part">
+            <input type="text" className="form-input" id="name" name="name" value={formData.name} onChange={handleChange} placeholder='Name' />
+            <input type="text" className="form-input" id="model" name="model" value={formData.model} onChange={handleChange} placeholder='Model' />
+            <input type="text" className="form-input" id="image" name="image" value={formData.image} onChange={handleChange} placeholder='Image' />
+          </div>
+          <div className='part'>
+            <input type="text" className="form-input" id="financeFee" name="financeFee" value={formData.financeFee} onChange={handleChange} placeholder='Finance Fee' />
+            <input type="text" className="form-input" id="totalAmount" name="totalAmount" value={formData.totalAmount} onChange={handleChange} placeholder='Total Amount' />
+            <input type="text" className="form-input" id="duration" name="duration" value={formData.duration} onChange={handleChange} placeholder='Duration' />
+          </div>
+          </div>
+          <button type="submit" className="carBtn">Add Car</button>
         </form>
       </div>
     </Modal>
