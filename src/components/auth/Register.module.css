@@ -1,0 +1,40 @@
+.LoginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 50%;
+  padding: 2rem;
+  background: rgb(213, 231, 213);
+  align-items: center;
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+}
+
+.LoginForm > input {
+  padding: 0.5rem;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #111;
+}
+
+.LoginForm > button {
+  background: linear-gradient(rgba(182, 175, 175, 0.2) 0, #facd05cc 0);
+  border: none;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+.LoginDiv {
+  height: 100vh;
+  background: url(https://wallpapers.com/images/hd/welcome-background-4yrhirh7bcms16n9.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Loginlink {
+  color: darkred;
+  text-decoration: none;
+}

@@ -5,25 +5,32 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Login from './components/auth/Login'
 import Register from './components/auth/Register'
-import Car from './components/car/car';
+import Splash from './components/auth/Splash'
+import Vehicles from './components/pages/Vehicles';
 import SidebarComponents from './components/sideBar/sideBarComponent';
 import ResponsiveNav from './components/sideBar/responsive';
+import './App.css';
+import RootPath from './RootPath';
 
 function App() {
   const { currentUser } = useSelector((state) => state.user)
-  console.log(currentUser)
+ 
   return (
     <div className="AppDiv">
-      <div className="App">
+      <RootPath />
+     {/* <div className="navApp">
+       {currentUser && 
+       <SidebarComponents />}
+      </div>
         <div className="navRoute">
           <Routes>
             <Route path="/" element={ <SidebarComponents />} />
+            <Route path="/vehicles" element={<Vehicles />} />
             <Route path="/login" element={currentUser ? <Navigate to="/" /> : <Login />} />
-            <Route path="/register" element={  <Register />} />
+            <Route path="/register" element={currentUser ? <Navigate to="/login" /> :   <Register />} />
           </Routes>
-        </div>
+        </div> */}
       </div>
-    </div>
 
   );
 }
