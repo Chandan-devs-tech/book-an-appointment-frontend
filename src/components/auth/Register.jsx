@@ -24,7 +24,7 @@ const Register = () => {
         <button onClick={registerUser} type="submit">Signup</button>
         <p>
           Have an account?
-          <Link to="/login" className={styles.LoginLink}>
+          <Link to="/" className={styles.LoginLink}>
             &nbsp; Login...
           </Link>
         </p>

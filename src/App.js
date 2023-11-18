@@ -1,37 +1,33 @@
-/* eslint-disable */
-import './styles/App.css';
-import './styles/SideBar.css';
+import React from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import Login from './components/auth/Login'
-import Register from './components/auth/Register'
-import Splash from './components/auth/Splash'
+import Login from './components/auth/Login';
+import Register from './components/auth/Register';
 import Vehicles from './components/pages/Vehicles';
-import SidebarComponents from './components/sideBar/sideBarComponent';
-import ResponsiveNav from './components/sideBar/responsive';
-import './App.css';
-import RootPath from './RootPath';
+import CarDetails from './components/pages/CarDetails';
 
 function App() {
-  const { currentUser } = useSelector((state) => state.user)
- 
+  const { currentUser } = useSelector((state) => state.user);
   return (
-    <div className="AppDiv">
-      <RootPath />
-     {/* <div className="navApp">
-       {currentUser && 
-       <SidebarComponents />}
-      </div>
-        <div className="navRoute">
-          <Routes>
-            <Route path="/" element={ <SidebarComponents />} />
-            <Route path="/vehicles" element={<Vehicles />} />
-            <Route path="/login" element={currentUser ? <Navigate to="/" /> : <Login />} />
-            <Route path="/register" element={currentUser ? <Navigate to="/login" /> :   <Register />} />
-          </Routes>
-        </div> */}
-      </div>
-
+    <>
+      {/* <div className="root_container"> */}
+      <Routes>
+        <Route
+          path="/vehicles"
+          element={currentUser ? <Vehicles /> : <Navigate to="/login" />}
+        />
+        <Route path="/details/:id" element={<CarDetails />} />
+        <Route
+          path="/"
+          element={currentUser ? <Navigate to="/vehicles" /> : <Login />}
+        />
+        <Route
+          path="/register"
+          element={currentUser ? <Navigate to="/vehicles" /> : <Register />}
+        />
+      </Routes>
+      {/* </div> */}
+    </>
   );
 }
 
