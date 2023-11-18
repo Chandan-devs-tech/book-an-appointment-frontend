@@ -1,19 +1,21 @@
 /* eslint-disable */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { login } from '../../redux/apiCalls';
 import styles from "./login.module.css"
 
 const Login = () => {
   const [name, setname] = useState('')
   const dispatch = useDispatch()
-
-  const handleLogin = (e) => {
-    e.preventDefault()
-
-    login(dispatch, { name });
-  }
+  const navigate = useNavigate()
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    const success = await login(dispatch, { name });
+    if (success) {
+      navigate('/vehicles'); // Redirect to '/vehicles' on successful login
+    }
+  };
   return (
     <div className= {styles.LoginDiv}>
       <form className= {styles.LoginForm}>
