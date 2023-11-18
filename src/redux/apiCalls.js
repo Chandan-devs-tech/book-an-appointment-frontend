@@ -1,30 +1,29 @@
-/* eslint-disable */
-import { publicRequest } from "../request";
-import { loginFailure, loginStart, loginSuccess } from "./user/user"
+import { publicRequest } from '../request';
+import { loginFailure, loginStart, loginSuccess } from './user/user';
 
 export const login = async (dispatch, user) => {
   dispatch(loginStart());
   try {
-    const res = await publicRequest.post("/login", user)
+    const res = await publicRequest.post('/login', user);
     const responseData = res.data;
     delete responseData.headers;
-    dispatch(loginSuccess(responseData))
+    dispatch(loginSuccess(responseData));
   } catch (err) {
-    dispatch(loginFailure())
+    dispatch(loginFailure());
   }
-}
+};
 export const logout = (dispatch) => {
-  dispatch(loginSuccess(false))
-}
+  dispatch(loginSuccess(false));
+};
 
 export const createUser = async (dispatch, user) => {
   dispatch(loginStart());
   try {
-    const res = await publicRequest.post("/register", user)
+    const res = await publicRequest.post('/register', user);
     const responseData = res.data;
     delete responseData.headers;
-    dispatch(loginSuccess(responseData))
+    dispatch(loginSuccess(responseData));
   } catch (err) {
-    dispatch(loginFailure())
+    dispatch(loginFailure());
   }
-}
+};

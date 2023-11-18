@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import Logo from '../../assets/drive-easy-logo.png';
 import ResponsiveNav from './responsive';
 import AddCar from '../car/AddCar';
+import { useDispatch } from 'react-redux';
+import { logout } from '../../redux/apiCalls';
 
 const SidebarComponents = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -12,6 +14,11 @@ const SidebarComponents = () => {
 
   const closeModal = () => {
     setIsModalOpen(false);
+  };
+
+  const dispatch = useDispatch();
+  const logouts = () => {
+    logout(dispatch, false);
   };
   return (
     <div className="nav-side-menu">
@@ -23,7 +30,7 @@ const SidebarComponents = () => {
           <hr />
           <ul className="nav nav-pills flex-column mb-auto">
             <li className="nav-item">
-              <a href="#" className="nav-link" aria-current="page">
+              <a href="/vehicles" className="nav-link" aria-current="page">
                 Home
               </a>
             </li>
@@ -48,7 +55,7 @@ const SidebarComponents = () => {
               </a>
             </li>
             <li className="nav-item logout">
-              <a href="#" className="nav-link ">
+              <a href="/" className="nav-link " onClick={logouts}>
                 Log out
               </a>
             </li>

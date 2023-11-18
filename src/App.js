@@ -1,29 +1,35 @@
-/* eslint-disable */
-import './styles/App.css';
-import './styles/SideBar.css';
+import React from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Login from './components/auth/Login'
 import Register from './components/auth/Register'
 import SidebarComponents from './components/sideBar/sideBarComponent';
 import ResponsiveNav from './components/sideBar/responsive';
+import Vehicles from './components/pages/Vehicles';
+import CarDetails from './components/pages/CarDetails';
 
 function App() {
-  const { currentUser } = useSelector((state) => state.user)
-  console.log(currentUser)
+  const { currentUser } = useSelector((state) => state.user);
   return (
-    <div className="AppDiv">
-      <div className="App">
-        <div className="navRoute">
-          <Routes>
-            <Route path="/" element={ <SidebarComponents />} />
-            <Route path="/login" element={currentUser ? <Navigate to="/" /> : <Login />} />
-            <Route path="/register" element={  <Register />} />
-          </Routes>
-        </div>
-      </div>
-    </div>
-
+    <>
+      {/* <div className="root_container"> */}
+      <Routes>
+        <Route
+          path="/vehicles"
+          element={currentUser ? <Vehicles /> : <Navigate to="/login" />}
+        />
+        <Route path="/details/:id" element={<CarDetails />} />
+        <Route
+          path="/"
+          element={currentUser ? <Navigate to="/vehicles" /> : <Login />}
+        />
+        <Route
+          path="/register"
+          element={currentUser ? <Navigate to="/vehicles" /> : <Register />}
+        />
+      </Routes>
+      {/* </div> */}
+    </>
   );
 }
 
