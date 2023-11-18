@@ -13,7 +13,8 @@ import {
 } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import userSlice from '../user/user'
-import vehicleSlice from '../cars/vehicles';
+// import vehicleSlice from '../cars/vehicles';
+import carsReducer from "../cars/CarsSlice";
 
 const persistConfig = {
   key: 'root',
@@ -26,7 +27,8 @@ const persistedReducer = persistReducer(persistConfig, userSlice)
 export const store = configureStore({
   reducer: {
     user: persistedReducer,
-    vehicles: vehicleSlice,
+    // vehicles: vehicleSlice,
+    car: carsReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
