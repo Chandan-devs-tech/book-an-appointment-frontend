@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import Logo from '../../assets/drive-easy-logo.png';
 import ResponsiveNav from './responsive';
 import AddCar from '../car/AddCar';
-import { useDispatch } from 'react-redux';
 import { logout } from '../../redux/apiCalls';
 
 const SidebarComponents = () => {

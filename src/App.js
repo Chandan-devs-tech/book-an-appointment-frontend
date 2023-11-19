@@ -1,10 +1,8 @@
 import React from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import Login from './components/auth/Login'
-import Register from './components/auth/Register'
-import SidebarComponents from './components/sideBar/sideBarComponent';
-import ResponsiveNav from './components/sideBar/responsive';
+import Login from './components/auth/Login';
+import Register from './components/auth/Register';
 import Vehicles from './components/pages/Vehicles';
 import CarDetails from './components/pages/CarDetails';
 
