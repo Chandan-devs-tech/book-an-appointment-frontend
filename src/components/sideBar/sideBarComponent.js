@@ -1,10 +1,21 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Logo from '../../assets/drive-easy-logo.png';
 import ResponsiveNav from './responsive';
+import AddCar from '../car/AddCar';
 import { logout } from '../../redux/apiCalls';
 
 const SidebarComponents = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   const dispatch = useDispatch();
   const logouts = () => {
     logout(dispatch, false);
@@ -34,7 +45,7 @@ const SidebarComponents = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link ">
+              <a href="#" className="nav-link" onClick={openModal}>
                 Add Car
               </a>
             </li>
@@ -52,6 +63,7 @@ const SidebarComponents = () => {
         </div>
       </div>
       <ResponsiveNav />
+      <AddCar isOpen={isModalOpen} onClose={closeModal} />
     </div>
   );
 };

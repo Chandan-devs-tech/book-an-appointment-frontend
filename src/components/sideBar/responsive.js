@@ -1,12 +1,25 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Logo from '../../assets/logo-white.jpg';
+import AddCar from '../car/AddCar';
 import { logout } from '../../redux/apiCalls';
 
 const ResponsiveNav = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   const dispatch = useDispatch();
   const logouts = () => {
     logout(dispatch, false);
   };
+
   return (
     <div className="mobile-menu">
       <nav className="navbar navbar-expand-lg navbar-dark bg-success">
@@ -28,7 +41,7 @@ const ResponsiveNav = () => {
               <a className="nav-link" href="/">My Reservations</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/"> Add Car</a>
+              <a className="nav-link" href="#" onClick={openModal}> Add Car</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/"> Delete Car</a>
@@ -39,6 +52,7 @@ const ResponsiveNav = () => {
           </ul>
         </div>
       </nav>
+      <AddCar isOpen={isModalOpen} onClose={closeModal} />
     </div>
   );
 };
