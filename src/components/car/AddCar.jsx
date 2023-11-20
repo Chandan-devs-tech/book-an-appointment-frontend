@@ -33,9 +33,9 @@ const AddCar = ({ isOpen, onClose }) => {
       finance_fee: parseFloat(formData.financeFee),
       total_amount: parseFloat(formData.totalAmount),
       duration: parseInt(formData.duration),
-      user_id: 10,
+      user_id: 1,
     };
-
+    
     try {
       dispatch(addCar(formattedData))
       .then(() =>{
