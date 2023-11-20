@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { register } from 'swiper/element/bundle';
 import { Carousel } from 'react-bootstrap';
-import { fetchCars } from '../../redux/cars/CarsSlice';
 import SidebarComponents from '../sideBar/sideBarComponent';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AddCar from '../car/AddCar';
+import { fetchCars, addCar } from '../../redux/cars/CarsSlice';
 
 register();
 
@@ -14,20 +14,22 @@ const Vehicles = () => {
   const dispatch = useDispatch();
   const vehicles = useSelector((state) => state.car.cars);
   const [isAddCarOpen, setIsAddCarOpen] = useState(false);
+
   useEffect(() => {
     if (vehicles.length === 0) {
       dispatch(fetchCars());
     }
-  }, [dispatch]);
+  }, [dispatch, vehicles.length]);
 
-  const handleAddCar = async (newCarData) => {
-    try {
-      await dispatch(addCar(newCarData));
-      setIsAddCarOpen(false); // Close the AddCar modal after adding the car
-      dispatch(fetchCars()); // Refresh cars list after adding a new car
-    } catch (error) {
-      console.error('Error adding car:', error);
-    }
+  const handleAddCar = (newCarData) => {
+    dispatch(addCar(newCarData))
+      .then(() => {
+        setIsAddCarOpen(false);
+        dispatch(fetchCars());
+      })
+      .catch((error) => {
+        console.error('Error adding car:', error);
+      });
   };
 
   return (
@@ -51,6 +53,11 @@ const Vehicles = () => {
           ))}
         </Carousel>
       </div>
+      <AddCar
+        isOpen={isAddCarOpen}
+        onClose={() => setIsAddCarOpen(false)}
+        onAddCar={handleAddCar}
+      />
     </div>
   );
 };

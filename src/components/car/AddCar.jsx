@@ -10,6 +10,7 @@ const AddCar = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
     name: '',
     model: '',
+    description: '',
     image: '',
     financeFee: '',
     totalAmount: '',
@@ -23,13 +24,24 @@ const AddCar = ({ isOpen, onClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const formattedData = {
+      name: formData.name,
+      model: formData.model,
+      description: formData.description,
+      img: formData.image,
+      finance_fee: parseFloat(formData.financeFee),
+      total_amount: parseFloat(formData.totalAmount),
+      duration: parseInt(formData.duration),
+      user_id: 'john_id',
+    };
+
     try {
-      // Dispatch the addCar action to add a new car
-      dispatch(addCar(formData))
+      dispatch(addCar(formattedData))
       .then(() =>{
       setFormData({
         name: '',
         model: '',
+        description: '',
         image: '',
         financeFee: '',
         totalAmount: '',
@@ -45,6 +57,10 @@ const AddCar = ({ isOpen, onClose }) => {
 }
 };
 
+const handleAddCar = () => {
+  onClose();
+};
+
   return (
     <Modal
     isOpen={isOpen}
@@ -57,6 +73,7 @@ const AddCar = ({ isOpen, onClose }) => {
           <div className="part">
             <input type="text" className="form-input" id="name" name="name" value={formData.name} onChange={handleChange} placeholder='Name' />
             <input type="text" className="form-input" id="model" name="model" value={formData.model} onChange={handleChange} placeholder='Model' />
+            <input type="text" className="form-input" id="description" name="description" value={formData.description} onChange={handleChange} placeholder='Description' />
             <input type="text" className="form-input" id="image" name="image" value={formData.image} onChange={handleChange} placeholder='Image' />
           </div>
           <div className='part'>
@@ -65,7 +82,7 @@ const AddCar = ({ isOpen, onClose }) => {
             <input type="text" className="form-input" id="duration" name="duration" value={formData.duration} onChange={handleChange} placeholder='Duration' />
           </div>
           </div>
-          <button type="submit" className="carBtn">Add Car</button>
+          <button type="submit" className="carBtn" onClick={handleAddCar}>Add Car</button>
         </form>
       </div>
     </Modal>
