@@ -177,7 +177,16 @@ button.navbar-toggler {
   justify-content: center;
   align-items: center;
   width: 100%;
-  z-index: 100;
+}
+
+.ReactModal__Content.ReactModal__Content--after-open {
+  margin: 0 auto;
+}
+
+@media only screen and (max-width:480px) {
+  .carousel {
+    z-index: 10;
+  }
 }
 
 .vehiclesDiv > h1 {
