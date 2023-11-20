@@ -15,9 +15,26 @@ export const fetchCars = createAsyncThunk('car/fetchCars', async () => {
   }));
 });
 
+const headers = {
+  'Content-Type': 'application/json', // Add any additional headers here
+};
+
 export const addCar = createAsyncThunk('car/addCar', async (newCarData) => {
-  const response = await axios.post('http://localhost:3000/api/v1/cars', newCarData);
-  return response.data;
+  const formattedData = {
+    car: newCarData,
+  };
+
+  try {
+    const response = await axios.post('http://localhost:3000/api/v1/cars', formattedData, {
+      headers,
+    });
+
+    console.log('Response Data:', response.data);
+    return response.data;
+  } catch (error) {
+    console.error('Error:', error.response.data.error);
+    throw error; // rethrow the error to be caught by the calling code
+  }
 });
 
 const initialState = {
