@@ -15,6 +15,11 @@ export const fetchCars = createAsyncThunk('car/fetchCars', async () => {
   }));
 });
 
+export const addCar = createAsyncThunk('car/addCar', async (newCarData) => {
+  const response = await axios.post('http://localhost:3000/api/v1/cars', newCarData);
+  return response.data;
+});
+
 const initialState = {
   isLoading: false,
   cars: [],
@@ -35,6 +40,18 @@ const carsSlice = createSlice({
     builder.addCase(fetchCars.rejected, (state, action) => {
       state.isLoading = false;
       state.cars = [];
+      state.error = action.error.message;
+    });
+    // Reducers for adding a new car
+    builder.addCase(addCar.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(addCar.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.cars.push(action.payload);
+    });
+    builder.addCase(addCar.rejected, (state, action) => {
+      state.isLoading = false;
       state.error = action.error.message;
     });
   },

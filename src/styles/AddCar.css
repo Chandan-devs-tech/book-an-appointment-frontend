@@ -11,6 +11,7 @@ div.ReactModal__Content.ReactModal__Content--after-open {
   border: none !important;
   border-radius: 3% !important;
   box-shadow: 0 1px 7px rgb(119, 236, 193) !important;
+  z-index: 3 !important;
 }
 
 div.ReactModal__Overlay.ReactModal__Overlay--after-open {
