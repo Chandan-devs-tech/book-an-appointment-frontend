@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -59,6 +59,9 @@ function CarDetails() {
                 Reserve
                 <FontAwesomeIcon icon={faCircleChevronRight} className="setting-icon" />
               </button>
+              {showReservationForm && (
+                <ReservationForm onSubmit={handleReservationSubmit} />
+              )}
             </div>
           </div>
         ))

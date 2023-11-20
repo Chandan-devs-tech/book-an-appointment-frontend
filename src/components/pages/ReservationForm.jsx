@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 
 function ReservationForm({ onSubmit }) {
   const currentUser = useSelector((state) => state.user.currentUser);
   const [formData, setFormData] = useState({
     username: currentUser.username,
-    car: item.name,
+    car: '',
     city: '',
     date: '',
   });
@@ -22,6 +23,7 @@ function ReservationForm({ onSubmit }) {
 
   return (
     <form onSubmit={handleSubmit}>
+      <h2>Reserve this car</h2>
       <input type="text" name="username" value={formData.username} readOnly />
       <input type="text" name="car" value={formData.car} readOnly />
       <input type="text" name="city" value={formData.city} onChange={handleInputChange} placeholder="City" />
@@ -30,5 +32,9 @@ function ReservationForm({ onSubmit }) {
     </form>
   );
 }
+
+ReservationForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
 
 export default ReservationForm;

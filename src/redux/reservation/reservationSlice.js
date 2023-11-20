@@ -13,7 +13,7 @@ const reservationSlice = createSlice({
     },
     deleteReservation(state, action) {
       state.userReservations = state.userReservations.filter(
-        (reservation) => reservation.id !== action.payload
+        (reservation) => reservation.id !== action.payload,
       );
     },
   },

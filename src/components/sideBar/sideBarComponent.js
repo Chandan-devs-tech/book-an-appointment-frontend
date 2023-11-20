@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Logo from '../../assets/drive-easy-logo.png';
 import ResponsiveNav from './responsive';
 import { logout } from '../../redux/apiCalls';
@@ -29,9 +30,9 @@ const SidebarComponents = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link ">
+              <Link to="/reservations" className="nav-link ">
                 My Reservations
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
               <a href="#" className="nav-link ">
