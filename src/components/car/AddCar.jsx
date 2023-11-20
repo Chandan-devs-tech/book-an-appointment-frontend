@@ -23,6 +23,7 @@ const AddCar = ({ isOpen, onClose }) => {
   };
 
   const handleSubmit = (e) => {
+    console.log(formData);
     e.preventDefault();
     const formattedData = {
       name: formData.name,
@@ -32,7 +33,7 @@ const AddCar = ({ isOpen, onClose }) => {
       finance_fee: parseFloat(formData.financeFee),
       total_amount: parseFloat(formData.totalAmount),
       duration: parseInt(formData.duration),
-      user_id: 'john_id',
+      user_id: 10,
     };
 
     try {
@@ -47,7 +48,6 @@ const AddCar = ({ isOpen, onClose }) => {
         totalAmount: '',
         duration: '',
       });
-    onClose();
   })
    .catch ((error) => {
     console.error('Error adding car:', error);
@@ -60,11 +60,12 @@ const AddCar = ({ isOpen, onClose }) => {
 const handleAddCar = () => {
   onClose();
 };
-
+  
   return (
     <Modal
     isOpen={isOpen}
     onRequestClose={onClose}
+    ariaHideApp={false}
     >
       <div className="form-container">
         <h2>Add New Car</h2>
@@ -82,7 +83,7 @@ const handleAddCar = () => {
             <input type="text" className="form-input" id="duration" name="duration" value={formData.duration} onChange={handleChange} placeholder='Duration' />
           </div>
           </div>
-          <button type="submit" className="carBtn" onClick={handleAddCar}>Add Car</button>
+          <button type="submit" className="carBtn">Add Car</button>
         </form>
       </div>
     </Modal>
