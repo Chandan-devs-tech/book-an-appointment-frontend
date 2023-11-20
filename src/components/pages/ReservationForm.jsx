@@ -5,7 +5,7 @@ function ReservationForm({ onSubmit }) {
   const currentUser = useSelector((state) => state.user.currentUser);
   const [formData, setFormData] = useState({
     username: currentUser.username,
-    car: '',
+    car: item.name,
     city: '',
     date: '',
   });

@@ -5,6 +5,7 @@ import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import Vehicles from './components/pages/Vehicles';
 import CarDetails from './components/pages/CarDetails';
+import ReservationPage from './components/pages/ReservationPage';
 
 function App() {
   const { currentUser } = useSelector((state) => state.user);
@@ -17,6 +18,7 @@ function App() {
           element={currentUser ? <Vehicles /> : <Navigate to="/login" />}
         />
         <Route path="/details/:id" element={<CarDetails />} />
+        <Route path="/reservations" element={<ReservationPage />} />
         <Route
           path="/"
           element={currentUser ? <Navigate to="/vehicles" /> : <Login />}
