@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable no-useless-catch */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
@@ -29,7 +31,6 @@ export const addCar = createAsyncThunk('car/addCar', async (newCarData) => {
       headers,
     });
 
-    console.log('Response Data:', response.data);
     return response.data;
   } catch (error) {
     console.error('Error:', error.response.data.error);

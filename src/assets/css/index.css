@@ -183,7 +183,7 @@ button.navbar-toggler {
   margin: 0 auto;
 }
 
-@media only screen and (max-width:480px) {
+@media only screen and (max-width: 480px) {
   .carousel {
     z-index: 10;
   }
@@ -321,7 +321,7 @@ button.navbar-toggler {
   .nav-side-menu {
     width: 100%;
     position: fixed;
-    z-index: 20; 
+    z-index: 20;
   }
 
   .vehiclesDiv {
