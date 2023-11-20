@@ -21,6 +21,7 @@ export const createUser = async (dispatch, user) => {
   try {
     const res = await publicRequest.post('/register', user);
     const responseData = res.data;
+    console.log('Response Data:', responseData.id);
     delete responseData.headers;
     dispatch(loginSuccess(responseData));
   } catch (err) {
