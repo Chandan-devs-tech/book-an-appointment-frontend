@@ -6,17 +6,29 @@ import { Carousel } from 'react-bootstrap';
 import { fetchCars } from '../../redux/cars/CarsSlice';
 import SidebarComponents from '../sideBar/sideBarComponent';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import AddCar from '../car/AddCar';
 
 register();
 
 const Vehicles = () => {
   const dispatch = useDispatch();
   const vehicles = useSelector((state) => state.car.cars);
+  const [isAddCarOpen, setIsAddCarOpen] = useState(false);
   useEffect(() => {
     if (vehicles.length === 0) {
       dispatch(fetchCars());
     }
   }, [dispatch]);
+
+  const handleAddCar = async (newCarData) => {
+    try {
+      await dispatch(addCar(newCarData));
+      setIsAddCarOpen(false); // Close the AddCar modal after adding the car
+      dispatch(fetchCars()); // Refresh cars list after adding a new car
+    } catch (error) {
+      console.error('Error adding car:', error);
+    }
+  };
 
   return (
     <div className="main-page">

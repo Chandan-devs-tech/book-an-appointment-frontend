@@ -1,9 +1,12 @@
 /* eslint-disable */
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import Modal from 'react-modal';
 import '../../styles/AddCar.css';
+import { addCar } from '../../redux/cars/CarsSlice';
 
 const AddCar = ({ isOpen, onClose }) => {
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     name: '',
     model: '',
@@ -20,9 +23,27 @@ const AddCar = ({ isOpen, onClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    try {
+      // Dispatch the addCar action to add a new car
+      dispatch(addCar(formData))
+      .then(() =>{
+      setFormData({
+        name: '',
+        model: '',
+        image: '',
+        financeFee: '',
+        totalAmount: '',
+        duration: '',
+      });
     onClose();
-  };
+  })
+   .catch ((error) => {
+    console.error('Error adding car:', error);
+  });
+} catch (error) {
+  console.error('Error dispatching addCar:', error);
+}
+};
 
   return (
     <Modal
