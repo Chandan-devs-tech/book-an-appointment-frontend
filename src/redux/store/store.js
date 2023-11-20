@@ -27,6 +27,7 @@ export const store = configureStore({
     user: persistedReducer,
     // vehicles: vehicleSlice,
     car: carsReducer,
+    reservation: reservationReducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware({
     serializableCheck: {
