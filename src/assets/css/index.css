@@ -320,12 +320,8 @@ button.navbar-toggler {
 
   .nav-side-menu {
     width: 100%;
-    height: 100vh;
     position: fixed;
-    top: 0;
-    bottom: 0;
-
-    /* z-index: 2; */
+    z-index: 20; 
   }
 
   .vehiclesDiv {
