@@ -72,15 +72,15 @@ const handleAddCar = () => {
         <form onSubmit={handleSubmit}>
           <div className='cont'>
           <div className="part">
-            <input type="text" className="form-input" id="name" name="name" value={formData.name} onChange={handleChange} placeholder='Name' />
-            <input type="text" className="form-input" id="model" name="model" value={formData.model} onChange={handleChange} placeholder='Model' />
-            <input type="text" className="form-input" id="description" name="description" value={formData.description} onChange={handleChange} placeholder='Description' />
+            <input type="text" className="form-input" id="name" name="name" value={formData.name} onChange={handleChange} placeholder='Name' required />
+            <input type="text" className="form-input" id="model" name="model" value={formData.model} onChange={handleChange} placeholder='Model'  required />
+            <input type="text" className="form-input" id="description" name="description" value={formData.description} onChange={handleChange} placeholder='Description' required />
             <input type="text" className="form-input" id="image" name="image" value={formData.image} onChange={handleChange} placeholder='Image' />
           </div>
           <div className='part'>
-            <input type="text" className="form-input" id="financeFee" name="financeFee" value={formData.financeFee} onChange={handleChange} placeholder='Finance Fee' />
-            <input type="text" className="form-input" id="totalAmount" name="totalAmount" value={formData.totalAmount} onChange={handleChange} placeholder='Total Amount' />
-            <input type="text" className="form-input" id="duration" name="duration" value={formData.duration} onChange={handleChange} placeholder='Duration' />
+            <input type="number" className="form-input" id="financeFee" name="financeFee" value={formData.financeFee} onChange={handleChange} placeholder='Finance Fee' required />
+            <input type="number" className="form-input" id="totalAmount" name="totalAmount" value={formData.totalAmount} onChange={handleChange} placeholder='Total Amount' required />
+            <input type="number" className="form-input" id="duration" name="duration" value={formData.duration} onChange={handleChange} placeholder='Duration' required />
           </div>
           </div>
           <button type="submit" className="carBtn">Add Car</button>
