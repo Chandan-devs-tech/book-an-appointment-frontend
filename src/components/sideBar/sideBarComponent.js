@@ -50,7 +50,7 @@ const SidebarComponents = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link ">
+              <a href="/delete" className="nav-link ">
                 Delete Car
               </a>
             </li>
