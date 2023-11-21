@@ -67,3 +67,36 @@
   color: white;
   font-size: 20px;
 }
+
+@media (max-width: 468px) {
+  .popup {
+    top: 10%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .reservation-form {
+    width: 80%;
+    height: 60%;
+    margin-top: 90px;
+    gap: 15px;
+  }
+
+  .reservation-form h2 {
+    margin-bottom: 30px;
+    font-size: 25px;
+  }
+
+  .reservation-form input,
+  .reservation-form select {
+    width: 80%;
+    height: 35px;
+  }
+
+  .reservation-btn {
+    width: 45%;
+    height: 40px;
+    font-size: 16px;
+  }
+}
