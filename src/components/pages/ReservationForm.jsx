@@ -1,10 +1,11 @@
+/* eslint-disable react/forbid-prop-types */
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
-import { createReservation } from '../../redux/reservations/ReservationsSlice';
+import { createReservations } from '../../redux/reservation/reservationSlice';
 
-function ReservationForm({ onSubmit, car }) {
+function ReservationForm({ car }) {
   const currentUser = useSelector((state) => state.user.currentUser);
   const cars = useSelector((state) => state.car.cars);
 
@@ -12,7 +13,7 @@ function ReservationForm({ onSubmit, car }) {
 
   const [formData, setFormData] = useState({
     user_id: currentUser.id,
-    car_id: parseInt(car.id || '', 10),
+    car_id: car.id || '',
     city: '',
     date: '',
   });
@@ -24,8 +25,13 @@ function ReservationForm({ onSubmit, car }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(formData);
-    console.log(formData);
+    const formattedData = {
+      user_id: parseInt(formData.user_id, 10),
+      car_id: parseInt(formData.car_id, 10),
+      city: formData.city,
+      date: formData.date,
+    };
+    dispatch(createReservations(formattedData));
   };
 
   return (
@@ -55,13 +61,11 @@ function ReservationForm({ onSubmit, car }) {
 }
 
 ReservationForm.propTypes = {
-  onSubmit: PropTypes.func,
-  car: PropTypes.string,
+  car: PropTypes.object,
 };
 
 ReservationForm.defaultProps = {
-  onSubmit: () => {},
-  car: '',
+  car: null,
 };
 
 export default ReservationForm;
