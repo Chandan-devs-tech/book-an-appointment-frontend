@@ -134,7 +134,8 @@ button.navbar-toggler {
 }
 
 .main-page,
-.sidebar-detail-container {
+.sidebar-detail-container,
+.deleteCarMainContainer {
   display: flex;
   width: 100%;
 }
@@ -267,10 +268,6 @@ button.navbar-toggler {
   text-align: right;
 }
 
-.car-model {
-  text-align: right;
-}
-
 .car-amount-container p {
   display: flex;
   justify-content: space-between;
@@ -300,6 +297,76 @@ button.navbar-toggler {
   padding: 10px;
   font-size: 20px;
   color: #fff;
+}
+
+/* delete car styling */
+
+.deleteCarContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  gap: 30px;
+  width: 85%;
+  padding: 25px 15px;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.deleteCarImg {
+  width: 270px;
+  height: 220px;
+  border-radius: 20px;
+}
+
+.deletePage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  box-shadow: 2px 2px 2px;
+  border-radius: 8px;
+}
+
+.delete-car-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  align-items: center;
+  width: 100%;
+}
+
+/* .delete-side-menu {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  height: 100vh;
+} */
+
+.delete-car-btn {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background: #30c48d;
+  color: #fff;
+  font-size: 18px;
+}
+
+.car-model {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: right;
+}
+
+.car-amount {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+span {
+  font-weight: 700;
 }
 
 @media only screen and (max-width: 768px) {
@@ -360,6 +427,15 @@ button.navbar-toggler {
   .car-detail-container {
     width: 90%;
     margin: 0;
+  }
+
+  .deleteCarContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    overflow: auto;
+    height: auto;
+    margin-top: 60px;
   }
 }
 

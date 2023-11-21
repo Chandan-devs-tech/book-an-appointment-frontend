@@ -44,7 +44,7 @@ const ResponsiveNav = () => {
               <a className="nav-link" href="#" onClick={openModal}> Add Car</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/"> Delete Car</a>
+              <a className="nav-link" href="/delete"> Delete Car</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/" onClick={logouts}> Log out</a>
