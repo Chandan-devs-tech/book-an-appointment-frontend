@@ -19,7 +19,6 @@ export const createReservations = createAsyncThunk('create/createReservations', 
 export const getReservations = createAsyncThunk('get/getReservations', async () => {
   const response = await fetch('http://localhost:3000/api/v1/reservations');
   const data = await response.json();
-  console.log('Data:', data);
   return data;
 });
 
