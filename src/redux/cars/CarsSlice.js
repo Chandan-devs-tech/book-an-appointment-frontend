@@ -38,6 +38,16 @@ export const addCar = createAsyncThunk('car/addCar', async (newCarData) => {
   }
 });
 
+export const deleteCar = createAsyncThunk('car/deleteCar', async (id, thunkAPI) => {
+  try {
+    const response = await axios.delete(`http://localhost:3000/api/v1/cars/${id}`);
+    thunkAPI.dispatch(fetchCars());
+    return response.data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue('Failed to delete car...');
+  }
+});
+
 const initialState = {
   isLoading: false,
   cars: [],
