@@ -60,7 +60,7 @@ function CarDetails() {
                 <FontAwesomeIcon icon={faCircleChevronRight} className="setting-icon" />
               </button>
               {showReservationForm && (
-                <ReservationForm onSubmit={handleReservationSubmit} />
+                <ReservationForm onSubmit={handleReservationSubmit} car={item} />
               )}
             </div>
           </div>

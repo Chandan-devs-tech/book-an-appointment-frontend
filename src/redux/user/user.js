@@ -17,7 +17,7 @@ const userSlice = createSlice({
       const token = action.payload;
       localStorage.setItem('token', JSON.stringify(token));
       const getToken = JSON.parse(localStorage.getItem('token'));
-
+      
       state.currentUser = getToken;
     },
     loginFailure: (state) => {
