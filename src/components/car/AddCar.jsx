@@ -48,6 +48,7 @@ const AddCar = ({ isOpen, onClose }) => {
         totalAmount: '',
         duration: '',
       });
+      onClose();
   })
    .catch ((error) => {
     console.error('Error adding car:', error);
@@ -57,9 +58,7 @@ const AddCar = ({ isOpen, onClose }) => {
 }
 };
 
-const handleAddCar = () => {
-  onClose();
-};
+  
   
   return (
     <Modal

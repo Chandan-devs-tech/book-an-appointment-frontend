@@ -464,4 +464,10 @@ span {
   .side-menu {
     display: none;
   }
+
+  .nav-side-menu {
+    width: 100%;
+    position: fixed;
+    z-index: 120;
+}
 }

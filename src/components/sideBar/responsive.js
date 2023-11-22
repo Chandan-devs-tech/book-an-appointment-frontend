@@ -20,6 +20,19 @@ const ResponsiveNav = () => {
     logout(dispatch, false);
   };
 
+  const getElement = document.getElementById('add');
+  const getNav = document.getElementById('navbarNav');
+  const closeMenu = () => {
+    if (getElement) {
+      getNav.classList.remove('show');
+    }
+  };
+
+  const handleClick = () => {
+    closeMenu();
+    openModal();
+  };
+
   return (
     <div className="mobile-menu">
       <nav className="navbar navbar-expand-lg navbar-dark bg-success">
@@ -41,7 +54,7 @@ const ResponsiveNav = () => {
               <a className="nav-link" href="/reservations">My Reservations</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#" onClick={openModal}> Add Car</a>
+              <a className="nav-link" href="#" id="add" onClick={handleClick}> Add Car</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/delete"> Delete Car</a>
