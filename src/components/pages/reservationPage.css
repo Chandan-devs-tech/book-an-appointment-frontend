@@ -44,3 +44,15 @@
   border-radius: 7px;
   color: #fff;
 }
+
+@media (max-width: 468px) {
+  .reservation-image {
+    width: 130px;
+    height: 120px;
+  }
+
+  .reserv-list {
+    width: 80%;
+    height: 285px;
+  }
+}
