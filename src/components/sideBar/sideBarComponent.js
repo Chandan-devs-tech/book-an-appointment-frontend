@@ -36,7 +36,7 @@ const SidebarComponents = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link">
+              <a href="/add-reservation" className="nav-link">
                 Add Reservation
               </a>
             </li>

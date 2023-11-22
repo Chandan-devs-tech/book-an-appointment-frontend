@@ -38,7 +38,7 @@ const ResponsiveNav = () => {
               <a className="nav-link" href="/add-reservation">Add Reservation</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">My Reservations</a>
+              <a className="nav-link" href="/reservations">My Reservations</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#" onClick={openModal}> Add Car</a>

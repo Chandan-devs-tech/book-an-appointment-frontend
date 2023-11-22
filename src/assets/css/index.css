@@ -166,6 +166,10 @@ button.navbar-toggler {
   gap: 20px;
 }
 
+.my-component-page {
+  width: 85%;
+}
+
 .vehicleDiv {
   display: flex;
   flex-direction: column;
