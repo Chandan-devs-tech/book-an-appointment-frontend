@@ -14,7 +14,7 @@ function ReservationForm({ car }) {
 
   const [formData, setFormData] = useState({
     user_id: currentUser.id,
-    car_id: car.id || '',
+    car_id: car ? car.id : '',
     city: '',
     date: '',
   });

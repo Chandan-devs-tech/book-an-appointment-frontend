@@ -20,7 +20,7 @@ const ReservationPage = () => {
       {userReservations.length > 0 ? (
         <ul>
           {userReservations.map((reservation) => (
-            currentUser.id === reservation.user_id ? (
+            currentUser.id === reservation.user.id ? (
               <li key={reservation.id}>
                 <p>{reservation.car.name}</p>
                 <img src={reservation.car.img} alt="car" />

@@ -22,7 +22,7 @@ const ResponsiveNav = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">Add Reservation</a>
+              <a className="nav-link" href="/add-reservation">Add Reservation</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/">My Reservations</a>
