@@ -23,7 +23,9 @@ function App() {
         <Route path="/reservations" element={<ReservationPage />} />
         <Route path="/add-reservation" element={<ReservationForm />} />
         <Route path="/delete" element={<DeleteCar />} />
+        <Route
           path="/"
+          element={currentUser ? <Navigate to="/vehicles" /> : <Login />}
         />
         <Route
           path="/register"
