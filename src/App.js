@@ -9,7 +9,7 @@ import ReservationPage from './components/pages/ReservationPage';
 import ReservationForm from './components/pages/ReservationForm';
 import DeleteCar from './components/car/DeleteCar';
 
-function App() {
+const App = () => {
   const { currentUser } = useSelector((state) => state.user);
   return (
     <>
@@ -35,6 +35,6 @@ function App() {
       {/* </div> */}
     </>
   );
-}
+};
 
 export default App;
