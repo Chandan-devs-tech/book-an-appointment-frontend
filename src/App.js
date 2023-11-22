@@ -5,6 +5,8 @@ import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import Vehicles from './components/pages/Vehicles';
 import CarDetails from './components/pages/CarDetails';
+import ReservationPage from './components/pages/ReservationPage';
+import ReservationForm from './components/pages/ReservationForm';
 import DeleteCar from './components/car/DeleteCar';
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
           element={currentUser ? <Vehicles /> : <Navigate to="/login" />}
         />
         <Route path="/details/:id" element={<CarDetails />} />
+        <Route path="/reservations" element={<ReservationPage />} />
+        <Route path="/add-reservation" element={<ReservationForm />} />
         <Route path="/delete" element={<DeleteCar />} />
         <Route
           path="/"

@@ -1,4 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import {
   persistStore,
   persistReducer,
@@ -11,8 +11,8 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import userSlice from '../user/user';
-// import vehicleSlice from '../cars/vehicles';
 import carsReducer from '../cars/CarsSlice';
+import reservationReducer from '../reservation/reservationSlice';
 
 const persistConfig = {
   key: 'root',
@@ -20,14 +20,16 @@ const persistConfig = {
   storage,
 };
 
-const persistedReducer = persistReducer(persistConfig, userSlice);
+const rootReducer = combineReducers({
+  user: userSlice,
+  car: carsReducer,
+  reservation: reservationReducer,
+});
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-  reducer: {
-    user: persistedReducer,
-    // vehicles: vehicleSlice,
-    car: carsReducer,
-  },
+  reducer: persistedReducer,
   middleware: (getDefaultMiddleware) => getDefaultMiddleware({
     serializableCheck: {
       ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],

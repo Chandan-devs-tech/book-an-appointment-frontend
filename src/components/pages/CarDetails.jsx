@@ -1,18 +1,24 @@
 /* eslint-disable */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGear, faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { fetchCars } from '../../redux/cars/CarsSlice';
 import SidebarComponents from '../sideBar/sideBarComponent';
+import ReservationForm from './ReservationForm';
 
 function CarDetails() {
+  const [showReservationForm, setShowReservationForm] = useState(false);
   const dispatch = useDispatch();
   const { id } = useParams();
   const intId = parseInt(id, 10);
   const carData = useSelector((state) => state.car.cars);
   const filteredData = carData.filter((item) => item.id === intId);
+  const handleReservationSubmit = (reservationData) => {
+    console.log('Reservation submitted:', reservationData);
+    setShowReservationForm(false);
+  };
   useEffect(() => {
     if (carData.length === 0) {
       dispatch(fetchCars());
@@ -48,11 +54,14 @@ function CarDetails() {
                 </p>
               </div>
               <p className="discount">🎉 Enjoy 5.9% OFF Today! 🌟 Reserve now for exclusive savings! 🛍️</p>
-              <button type="button" className="reserve-btn">
+              <button type="button" className="reserve-btn" onClick={() => setShowReservationForm(true)}>
                 <FontAwesomeIcon icon={faGear} className="setting-icon" />
                 Reserve
                 <FontAwesomeIcon icon={faCircleChevronRight} className="setting-icon" />
               </button>
+              {showReservationForm && (
+                <ReservationForm onSubmit={handleReservationSubmit} car={item} />
+              )}
             </div>
           </div>
         ))
