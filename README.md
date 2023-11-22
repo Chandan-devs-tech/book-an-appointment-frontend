@@ -112,28 +112,25 @@ $ npm start
 <!-- AUTHORS -->
 ## **Authors 👤**<a name="author"></a>:
 
-**Author 1**
 👤 **Chandan Gupta**
 
 - GitHub: [@githubhandle](https://github.com/Chandan-devs-tech)
 - Twitter: [@twitterhandle](https://twitter.com/ChandanGuptaDev)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/chandangupta-devs)
 
-**Author 2**
+
 👤  **Uwimbabazi Dorcas**
 
 - GitHub: [@Dorcas126](https://github.com/Dorcas126)
 - Twitter: [@Dorcasuw](https://twitter.com/Dorcasuwi)
 - LinkedIn: [Uwimbabazi Dorcas](https://www.linkedin.com/in/uwimbabazi-dorcas-956a5a226/)
 
- **Author 3**
+
  👤 **Cephas TOKOLI**
 - GitHub: [@Ctokoli](https://github.com/ctokoli/)
 - Twitter: [@Ctokoli](https://twitter.com/ctokoli)
 - LinkedIn: [Cephas Tokoli](https://www.linkedin.com/in/ctokoli)
 
-
-**Author 4**
 👤 **Marie Grace**
 
 - GitHub: [@mariegrace31](https://github.com/mariegrace31)
