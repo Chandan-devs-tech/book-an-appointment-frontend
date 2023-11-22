@@ -7,7 +7,7 @@ import { createReservations } from '../../redux/reservation/reservationSlice';
 import './reservationForm.css';
 import SidebarComponents from '../sideBar/sideBarComponent';
 
-function ReservationForm({ car }) {
+const ReservationForm = ({ car }) => {
   const currentUser = useSelector((state) => state.user.currentUser);
   const cars = useSelector((state) => state.car.cars);
 
@@ -36,6 +36,9 @@ function ReservationForm({ car }) {
     dispatch(createReservations(formattedData));
   };
 
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const tomorrowFormatted = tomorrow.toISOString().split('T')[0];
   return (
     <>
       <SidebarComponents />
@@ -59,13 +62,13 @@ function ReservationForm({ car }) {
             <option value="New York">New York</option>
             <option value="Chicago">Chicago</option>
           </select>
-          <input type="date" name="date" value={formData.date} onChange={handleInputChange} placeholder="Date" />
+          <input type="date" name="date" value={formData.date} onChange={handleInputChange} placeholder="Date" min={tomorrowFormatted} />
           <button className="reservation-btn" type="submit">Add Reservation</button>
         </form>
       </div>
     </>
   );
-}
+};
 
 ReservationForm.propTypes = {
   car: PropTypes.object,

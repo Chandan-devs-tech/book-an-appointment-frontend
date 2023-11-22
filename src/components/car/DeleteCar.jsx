@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import SidebarComponents from '../sideBar/sideBarComponent';
 import { fetchCars, deleteCar } from '../../redux/cars/CarsSlice';
 
-function DeleteCar() {
+const DeleteCar = () => {
   const dispatch = useDispatch();
   const carData = useSelector((state) => state.car.cars);
   useEffect(() => {
@@ -36,6 +36,6 @@ function DeleteCar() {
       </div>
     </div>
   );
-}
+};
 
 export default DeleteCar;

@@ -8,7 +8,7 @@ import { fetchCars } from '../../redux/cars/CarsSlice';
 import SidebarComponents from '../sideBar/sideBarComponent';
 import ReservationForm from './ReservationForm';
 
-function CarDetails() {
+const CarDetails = () => {
   const [showReservationForm, setShowReservationForm] = useState(false);
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -69,6 +69,6 @@ function CarDetails() {
       </div>
     </div>
   );
-}
+};
 
 export default CarDetails;
