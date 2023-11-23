@@ -4,7 +4,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const fetchCars = createAsyncThunk('car/fetchCars', async () => {
-  const response = await axios.get('http://localhost:3000/api/v1/cars');
+  const response = await axios.get('https://drive-easy.onrender.com/api/v1/cars');
   return response.data.map((item) => ({
     id: item.id,
     name: item.name,
@@ -27,7 +27,7 @@ export const addCar = createAsyncThunk('car/addCar', async (newCarData) => {
   };
 
   try {
-    const response = await axios.post('http://localhost:3000/api/v1/cars', formattedData, {
+    const response = await axios.post('https://drive-easy.onrender.com/api/v1/cars', formattedData, {
       headers,
     });
 
@@ -40,7 +40,7 @@ export const addCar = createAsyncThunk('car/addCar', async (newCarData) => {
 
 export const deleteCar = createAsyncThunk('car/deleteCar', async (id, thunkAPI) => {
   try {
-    const response = await axios.delete(`http://localhost:3000/api/v1/cars/${id}`);
+    const response = await axios.delete(`https://drive-easy.onrender.com/api/v1/cars/${id}`);
     thunkAPI.dispatch(fetchCars());
     return response.data;
   } catch (error) {
