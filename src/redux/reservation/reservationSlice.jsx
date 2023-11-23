@@ -22,7 +22,7 @@ export const getReservations = createAsyncThunk('get/getReservations', async () 
   return data;
 });
 
-export const deleteReservation = createAsyncThunk('delete/deleteReservation', async (id) => {
+export const deleteReservation = createAsyncThunk('delete/deleteReservation', async (id, thunkAPI) => {
   const response = await fetch(`http://localhost:3000/api/v1/reservations/${id}`, {
     method: 'DELETE',
     headers: {
@@ -35,7 +35,7 @@ export const deleteReservation = createAsyncThunk('delete/deleteReservation', as
     // Handle the error, e.g., throw an error or return an object indicating the failure
     throw new Error(`Failed to delete reservation with ID ${id}`);
   }
-
+  thunkAPI.dispatch(getReservations());
   const data = await response.json();
   return data;
 });

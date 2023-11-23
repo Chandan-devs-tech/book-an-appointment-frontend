@@ -1,13 +1,15 @@
 /* eslint-disable react/forbid-prop-types */
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 import { createReservations } from '../../redux/reservation/reservationSlice';
 import './reservationForm.css';
-import SidebarComponents from '../sideBar/sideBarComponent';
+// import SidebarComponents from '../sideBar/sideBarComponent';
 
 const ReservationForm = ({ car }) => {
+  const navigate = useNavigate();
   const currentUser = useSelector((state) => state.user.currentUser);
   const cars = useSelector((state) => state.car.cars);
 
@@ -34,6 +36,7 @@ const ReservationForm = ({ car }) => {
       date: formData.date,
     };
     dispatch(createReservations(formattedData));
+    navigate('/reservations');
   };
 
   const tomorrow = new Date();
@@ -41,7 +44,7 @@ const ReservationForm = ({ car }) => {
   const tomorrowFormatted = tomorrow.toISOString().split('T')[0];
   return (
     <>
-      <SidebarComponents />
+      {/* <SidebarComponents className="add-reservation-navbar" /> */}
       <div className="popup">
         <form onSubmit={handleSubmit} className="reservation-form">
           <h2>Reserve this car</h2>
