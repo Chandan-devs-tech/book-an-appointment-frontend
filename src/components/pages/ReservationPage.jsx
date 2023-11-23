@@ -38,7 +38,7 @@ const ReservationPage = () => {
             ))}
           </ul>
         ) : (
-          <p>Loading.....</p>
+          <p className="reservation-title">Book car 🚗 reservation, please!</p>
         )}
       </div>
     </>

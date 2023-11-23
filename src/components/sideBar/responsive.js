@@ -6,6 +6,7 @@ import AddCar from '../car/AddCar';
 import { logout } from '../../redux/apiCalls';
 
 const ResponsiveNav = () => {
+  const [sidebarVisible, setSidebarVisible] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => {
     setIsModalOpen(true);
@@ -33,11 +34,28 @@ const ResponsiveNav = () => {
     openModal();
   };
 
+  const toggleSidebar = () => {
+    setSidebarVisible(!sidebarVisible);
+  };
+  const closeSidebar = () => {
+    setSidebarVisible(false);
+  };
+
+  const handleLogoutAndCloseSidebar = () => {
+    logouts();
+    closeSidebar();
+  };
+
+  const handleClickAndCloseSidebar = () => {
+    handleClick();
+    closeSidebar();
+  };
+
   return (
-    <div className="mobile-menu">
+    <div className={`mobile-menu ${sidebarVisible ? 'visible' : ''}`}>
       <nav className="navbar navbar-expand-lg navbar-dark bg-success">
         <a className="navbar-brand" href="/"><img src={Logo} alt="Drive Easy Logo" className="bi-logo-white" /></a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" onClick={toggleSidebar}>
           <span className="navbar-toggler-icon" />
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
@@ -48,19 +66,19 @@ const ResponsiveNav = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/add-reservation">Add Reservation</a>
+              <a className="nav-link" href="/add-reservation" onClick={closeSidebar}>Add Reservation</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/reservations">My Reservations</a>
+              <a className="nav-link" href="/reservations" onClick={closeSidebar}>My Reservations</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#" id="add" onClick={handleClick}> Add Car</a>
+              <a className="nav-link" href="#" id="add" onClick={handleClickAndCloseSidebar}> Add Car</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/delete"> Delete Car</a>
+              <a className="nav-link" href="/delete" onClick={closeSidebar}> Delete Car</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/" onClick={logouts}> Log out</a>
+              <a className="nav-link" href="/" onClick={handleLogoutAndCloseSidebar}> Log out</a>
             </li>
           </ul>
         </div>

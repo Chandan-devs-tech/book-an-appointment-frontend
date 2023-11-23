@@ -13,7 +13,6 @@ const App = () => {
   const { currentUser } = useSelector((state) => state.user);
   return (
     <>
-      {/* <div className="root_container"> */}
       <Routes>
         <Route
           path="/vehicles"
@@ -32,7 +31,6 @@ const App = () => {
           element={currentUser ? <Navigate to="/vehicles" /> : <Register />}
         />
       </Routes>
-      {/* </div> */}
     </>
   );
 };

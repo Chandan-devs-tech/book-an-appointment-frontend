@@ -342,13 +342,6 @@ button.navbar-toggler {
   width: 100%;
 }
 
-/* .delete-side-menu {
-  position: fixed;
-  top: 0px;
-  left: 0;
-  height: 100vh;
-} */
-
 .delete-car-btn {
   padding: 5px;
   border: none;
@@ -447,6 +440,10 @@ span {
     overflow: auto;
     height: 100vh;
     margin: 90px 0;
+  }
+
+  .add-reservation-navbar {
+    display: none;
   }
 }
 
