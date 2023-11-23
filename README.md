@@ -1,70 +1,207 @@
-# Getting Started with Create React App
+<a name="readme-top"></a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
 
-## Available Scripts
+#  **DRIVE EASY APP** <img src="./src/assets/drive-easy-logo.png">
+The DRIVE EASY APP is a web application that display a list of cars. It allows you to add a car, to delete a car and to reserve a car.
+---
+  <br/>
+  <br/>
+  <br/>
+</div>
 
-In the project directory, you can run:
+<!-- TABLE OF CONTENTS -->
+## <b>Table of Contents 📗
+- [**DRIVE EASY APP** ](#drive-easy-app-)
+  - [The DRIVE EASY APP is a web application that display a list of cars. It allows you to add a car, to delete a car and to reserve a car.](#the-drive-easy-app-is-a-web-application-that-display-a-list-of-cars-it-allows-you-to-add-a-car-to-delete-a-car-and-to-reserve-a-car)
+  - [Table of Contents 📗](#table-of-contents-)
+  - [**Built With 🛠**](#built-with-)
+    - [**Key Features 🏷️** ](#key-features-️-)
+  - [🚀 Live Demo ](#-live-demo-)
+  - [Kanban Board ](#kanban-board-)
+  - [**Prerequisites 🧱**](#prerequisites-)
+  - [**Setup ⚙️**](#setup-️)
+  - [\*\* 🏗️\*\*](#-️)
+  - [**Usage 📂**](#usage-)
+  - [**Authors 👤**:](#authors-)
+  - [**Contributing 🤝**](#contributing-)
+  - [**Show your support 🌟**](#show-your-support-)
+  - [**Acknowledgments 🙏**](#acknowledgments-)
+  - [License 📝](#license-)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
+<!-- BUILT WITH -->
+## **Built With 🛠**<a name="built-with"></a><br>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  <ul>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML5</a> markup to build raw structure of this web page</li><br>
+    <li><a href="https://react.dev/">React</a></li><br>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS3</a> custom properties, <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">FlexBox</a>, <a href="https://www.w3schools.com/css/css_grid.asp">Grid</a> to make the website visually attractive</li><br>
+    <li><a href="https://reactjs.org/">Javascript</a></li><br>
+    <li><a href="https://mozilla.github.io/addons-linter/">Linters</a> for coding convention and coding formating</li>
+    <li><a href="https://webpack.js.org">Webpack</a></li>
+  </ul>
 
-### `npm test`
+<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
+<!-- KEY FEATURES -->
+### **Key Features 🏷️** <a name="key-features"></a>
 
-### `npm run build`
+The Drive Easy App displays cars that have been fetched from our API, and allows to add, delete and reserve a car.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<!-- LIVE DEMO -->
 
-### `npm run eject`
+## 🚀 Live Demo <a name="live-demo"></a>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- [Live Demo Link](https://drive-easy-frontend.onrender.com/)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<!-- Kanban Board -->
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Kanban Board <a name="kanban-board"></a>
 
-## Learn More
+- [Kanban Board Link](https://github.com/users/Chandan-devs-tech/projects/7/views/1)
+- [Screenshot of the initial state of our Kanban board](https://github.com/Chandan-devs-tech/drive-easy-backend/issues/11)
+- We are group of four members. You can see the names in the authors section.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<!-- PREREQUISITIES -->
+## **Prerequisites 🧱**<a name="prerequisites"></a>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+In order to run this project you need:
 
-### Code Splitting
+- A GitHub account
+- Node JS
+- Webpack
+- A web browser to view output e.g. [Microsoft Edge](https://www.microsoft.com/en-us/edge).
+- An IDE e.g [Visual studio code](https://code.visualstudio.com/).
+- [A terminal](https://code.visualstudio.com/docs/terminal/basics).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<br>
 
-### Analyzing the Bundle Size
+---
+<!-- SETUP -->
+## **Setup ⚙️**<a name="setup"></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Clone this repository:<br>
+```sh
+  git clone https://github.com/Chandan-devs-tech/drive-easy-frontend.git
 
-### Making a Progressive Web App
+```
+Navigate to the folder
+```
+cd drive-easy-frontend
+```
+Checkout the branch
+```
+git checkout dev
+```
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
+<!-- INSTALL -->
+## ** 🏗️**<a name="install"></a>
 
-### Advanced Configuration
+Install all dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```sh
+    npm install
+```
+Run the following code to fix possible JavaScript linter errors:
+```
+npx eslint . --fix
+```
 
-### Deployment
+---
+<!-- USAGE -->
+## **Usage 📂**<a name="usage"></a>
+Open the page in the browser
+```sh
+$ npm start
+```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<!-- AUTHORS -->
+## **Authors 👤**<a name="author"></a>:
 
-### `npm run build` fails to minify
+👤 **Chandan Gupta**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- GitHub: [@githubhandle](https://github.com/Chandan-devs-tech)
+- Twitter: [@twitterhandle](https://twitter.com/ChandanGuptaDev)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/chandangupta-devs)
+
+
+👤  **Uwimbabazi Dorcas**
+
+- GitHub: [@Dorcas126](https://github.com/Dorcas126)
+- Twitter: [@Dorcasuw](https://twitter.com/Dorcasuwi)
+- LinkedIn: [Uwimbabazi Dorcas](https://www.linkedin.com/in/uwimbabazi-dorcas-956a5a226/)
+
+
+ 👤 **Cephas TOKOLI**
+- GitHub: [@Ctokoli](https://github.com/ctokoli/)
+- Twitter: [@Ctokoli](https://twitter.com/ctokoli)
+- LinkedIn: [Cephas Tokoli](https://www.linkedin.com/in/ctokoli)
+
+👤 **Marie Grace**
+
+- GitHub: [@mariegrace31](https://github.com/mariegrace31)
+- Twitter: [@mariegracebmg](https://twitter.com/mariegracebmg)
+- LinkedIn: [Marie Grace Bahati](https://linkedin.com/in/marie-gr%C3%A2ce-bahati-546765224)
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<br>
+
+---
+<!-- CONTRIBUTING -->
+## **Contributing 🤝**<a name="contributing"></a>
+
+If you have suggestions 📝, ideas 🤔, or bug reports 🐛, please feel free to open an [issue](https://github.com/Chandan-devs-tech/drive-easy-frontend/issues) on GitHub.
+Remember, every contribution, no matter how big or small, makes a difference.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<br>
+
+---
+<!-- SUPPORT -->
+## **Show your support 🌟**<a name="support"></a>
+
+Thank you for taking the time you took to explore this project! Your support means a lot to us. If you find this project valuable and would like to contribute, here are a few ways you can support us:
+
+ - **Star the project ⭐️**: Show your appreciation by starring this GitHub repository. It helps increase visibility and lets others know that the project is well-received.
+
+ - **Fork the project 🍴 🎣**: If you're interested in making improvements or adding new features, feel free to fork the project. You can work on your own version and even submit pull requests to suggest changes.
+
+ - **Share with others 🗺️**: Spread the word about this project. Share it on social media, mention it in relevant forums or communities, or recommend it to colleagues and friends who might find it useful.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<br>
+
+---
+<!-- ACKNOWLEDGEMENTS -->
+## **Acknowledgments 🙏**<a name="acknowledgements"></a>
+
+We would like to express our sincere gratitude to [Microverse](https://github.com/microverseinc), the dedicated reviewers, and collaborators. Your unwavering support and feedback have played an immense role in making this journey a resounding success. Thank you for being an integral part of our achievements. And many thanks to [Murat Korkmaz](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign), the author of the original design of this web app.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<br>
+
+---
+<!-- LICENCE -->
+## <b>License 📝</b><a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>

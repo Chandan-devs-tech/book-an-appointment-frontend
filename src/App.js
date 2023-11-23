@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Route, Routes, Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import Login from './components/auth/Login';
+import Register from './components/auth/Register';
+import Vehicles from './components/pages/Vehicles';
+import CarDetails from './components/pages/CarDetails';
+import ReservationPage from './components/pages/ReservationPage';
+import ReservationForm from './components/pages/ReservationForm';
+import DeleteCar from './components/car/DeleteCar';
 
-function App() {
+const App = () => {
+  const { currentUser } = useSelector((state) => state.user);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route
+          path="/vehicles"
+          element={currentUser ? <Vehicles /> : <Navigate to="/login" />}
+        />
+        <Route path="/details/:id" element={<CarDetails />} />
+        <Route path="/reservations" element={<ReservationPage />} />
+        <Route path="/add-reservation" element={<ReservationForm />} />
+        <Route path="/delete" element={<DeleteCar />} />
+        <Route
+          path="/"
+          element={currentUser ? <Navigate to="/vehicles" /> : <Login />}
+        />
+        <Route
+          path="/register"
+          element={currentUser ? <Navigate to="/vehicles" /> : <Register />}
+        />
+      </Routes>
+    </>
   );
-}
+};
 
 export default App;

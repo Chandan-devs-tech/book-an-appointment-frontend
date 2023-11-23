@@ -1,0 +1,470 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+}
+
+/* App.css style */
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* index.css style */
+
+body {
+  margin: 0;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  width: 100%;
+}
+
+code {
+  font-family:
+    source-code-pro,
+    Menlo,
+    Monaco,
+    Consolas,
+    "Courier New",
+    monospace;
+}
+
+/* sidebar.css style */
+
+.d-flex.flex-column.flex-shrink-0.p-3.bg-light {
+  height: 100vh;
+}
+
+li.nav-item {
+  margin-top: 16px;
+}
+
+li.nav-item a.nav-link {
+  color: rgb(45, 45, 45);
+  font-weight: 600;
+}
+
+img.bi.me-2 {
+  margin-left: 10px;
+}
+
+li.nav-item:hover a.nav-link {
+  background-color: #30c48d;
+  border-radius: 5px;
+  color: white;
+}
+
+li.nav-item.logout {
+  margin-top: 60%;
+}
+
+img.bi-logo-white {
+  height: 44px;
+  mix-blend-mode: color-dodge;
+  margin-left: 5px;
+}
+
+button.navbar-toggler {
+  margin-right: 14px;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+#root {
+  display: flex;
+
+  /* flex-direction: column; */
+  width: 100%;
+}
+
+.root_container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.main-page,
+.sidebar-detail-container,
+.deleteCarMainContainer {
+  display: flex;
+  width: 100%;
+}
+
+.nav-side-menu {
+  width: 25%;
+}
+
+.cars-swipper {
+  max-width: 100%;
+  margin-top: 5%;
+}
+
+.vehicleImg {
+  width: 50%;
+  height: 270px;
+  margin-left: 25%;
+  border-radius: 20px;
+}
+
+.vehiclesDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+  width: 85%;
+  gap: 20px;
+}
+
+.my-component-page {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.vehicleDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.ReactModal__Content.ReactModal__Content--after-open {
+  margin: 0 auto;
+}
+
+.vehiclesDiv > h1 {
+  margin-top: 20px;
+  font-size: 35px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.vehiclesDiv > h2 {
+  font-size: 20px;
+  text-align: center;
+}
+
+.car-name,
+.car-star,
+.car-description {
+  text-align: center;
+  width: 100%;
+}
+
+.vehicleDiv > h3 {
+  margin-top: 40px;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+}
+
+.details-link {
+  text-decoration: none;
+  color: #000;
+}
+
+/* Details page styling  */
+
+.details-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+  background-color: gray;
+}
+
+.car-detail-page {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+}
+
+.img {
+  width: 100%;
+  height: 270px;
+  margin-left: 25%;
+  border-radius: 20px;
+}
+
+.car-detail-container {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25px;
+  padding: 10px;
+  margin-right: 25px;
+}
+
+.details-car-name {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: right;
+}
+
+.car-amount-container p {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.car-amount-container p:nth-child(odd) {
+  background-color: rgb(196, 196, 196);
+}
+
+.car-amount-container p:nth-child(even) {
+  background-color: #fff;
+}
+
+.discount {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.reserve-btn {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: none;
+  background: #30c48d;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 20px;
+  color: #fff;
+}
+
+/* delete car styling */
+
+.deleteCarContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  gap: 30px;
+  width: 85%;
+  padding: 25px 15px;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.deleteCarImg {
+  width: 270px;
+  height: 220px;
+  border-radius: 20px;
+}
+
+.deletePage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  box-shadow: 2px 2px 2px;
+  border-radius: 8px;
+}
+
+.delete-car-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  align-items: center;
+  width: 100%;
+}
+
+.delete-car-btn {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background: #30c48d;
+  color: #fff;
+  font-size: 18px;
+}
+
+.car-model {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: right;
+}
+
+.car-amount {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+span {
+  font-weight: 700;
+}
+
+@media only screen and (max-width: 768px) {
+  .vehicles {
+    padding-bottom: 100px;
+    padding-right: 3px;
+    margin-right: 20px;
+  }
+
+  .vehicleImg {
+    height: 150px;
+  }
+
+  .root_container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-side-menu {
+    width: 100%;
+    position: fixed;
+    z-index: 20;
+  }
+
+  .vehiclesDiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    background-color: gray;
+    height: 100vh;
+  }
+
+  .details-page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .car-detail-page {
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .img-container {
+    width: 90%;
+    padding-top: 100px;
+  }
+
+  .img {
+    margin: 0;
+  }
+
+  .car-detail-container {
+    width: 90%;
+    margin: 0;
+  }
+
+  .deleteCarContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    overflow: auto;
+    height: auto;
+    margin-top: 60px;
+  }
+
+  .my-component-page {
+    width: 100%;
+    overflow: auto;
+    height: 100vh;
+    margin: 90px 0;
+  }
+
+  .add-reservation-navbar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  li.nav-item a.nav-link {
+    color: rgb(207, 206, 206);
+    font-weight: 600;
+    padding-left: 15px;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .side-menu {
+    display: none;
+  }
+
+  .nav-side-menu {
+    width: 100%;
+    position: fixed;
+    z-index: 120;
+  }
+}

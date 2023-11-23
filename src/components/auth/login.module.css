@@ -1,0 +1,41 @@
+.LoginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 90%;
+  padding: 2rem;
+  background: rgb(213, 231, 213);
+  align-items: center;
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+}
+
+.LoginForm > input {
+  padding: 0.5rem;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #111;
+}
+
+.LoginForm > button {
+  background: linear-gradient(rgba(182, 175, 175, 0.2) 0, #c5c51ecc 0);
+  border: none;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+.LoginDiv {
+  height: 100vh;
+  background: url(https://www.hertzdreamcollection.co.uk/blog/wp-content/uploads/2022/06/xcar-1506922_960_720-1.jpg.pagespeed.ic._Q5O7YWnSB.jpgU);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.Loginlink {
+  color: darkred;
+  text-decoration: none;
+}

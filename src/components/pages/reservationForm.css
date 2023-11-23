@@ -1,0 +1,102 @@
+.popup {
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 22%;
+  width: 80%;
+  height: 100%;
+  background-color: rgba(29, 216, 138, 0.8);
+  z-index: 100;
+}
+
+.reservation-form {
+  background-color: white;
+  width: 60%;
+  height: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 120px;
+  text-align: center;
+  display: flex;
+  gap: 29px;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.reservation-form h2 {
+  color: rgb(29, 216, 138);
+  margin-bottom: 10px;
+}
+
+.reservation-form input,
+.reservation-form select {
+  width: 60%;
+  height: 50px;
+  padding: 5px;
+  border-radius: 7px;
+  border: 1px solid gray;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reservation-form select option {
+  color: rgb(29, 216, 138);
+  padding: 5px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.automatic {
+  color: rgb(29, 216, 138);
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.reservation-btn {
+  width: 28%;
+  height: 50px;
+  padding: 5px;
+  border-radius: 13px;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(29, 216, 138);
+  color: white;
+  font-size: 20px;
+}
+
+@media (max-width: 468px) {
+  .popup {
+    top: 10%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .reservation-form {
+    width: 80%;
+    height: 60%;
+    margin-top: 90px;
+    gap: 15px;
+  }
+
+  .reservation-form h2 {
+    margin-bottom: 30px;
+    font-size: 25px;
+  }
+
+  .reservation-form input,
+  .reservation-form select {
+    width: 80%;
+    height: 35px;
+  }
+
+  .reservation-btn {
+    width: 45%;
+    height: 40px;
+    font-size: 16px;
+  }
+}
